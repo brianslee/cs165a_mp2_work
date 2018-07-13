@@ -1,0 +1,38 @@
+#include <iostream>
+#include "board.h"
+
+using namespace std;
+
+int main()
+{
+  cout << "Testing" << endl;
+  
+  //Test board
+  Board* b1 = new Board();
+  Board* b2 = new Board(5);
+  Board* b3 = new Board(26);
+  bool passed;
+  
+  //initialize boards
+  b1->initialize();
+  b2->initialize();
+  b3->initialize();
+  
+  //Test adding moves
+  passed = b1->addMove(1, 1, 1);
+  if(!passed)
+    {
+      cout << "failed to add" << endl;
+    }
+  b1->addMove(10, 10, 2);
+  b2->addMove(3, 3, 1);
+  b2->addMove(2, 3, 2);
+  b3->addMove(0, 0, 1);
+  b3->addMove(15, 15, 2);
+
+  //Test Board Printing
+  b1->printBoard();
+  b2->printBoard();
+  b3->printBoard();
+  return 0;
+}

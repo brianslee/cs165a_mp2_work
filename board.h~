@@ -1,0 +1,41 @@
+//Include guard
+#ifndef BOARD_H_
+#define BOARD_H_
+
+#include <iostream>
+
+using namespace std;
+
+/*
+   Board Class
+   Holds all members and functions for diplaying
+   the board and adding game pieces to the board
+*/
+
+class Board
+{
+ public:
+  //constructer(s)
+ Board() : SIDE_SIZE(11){};
+ Board(int size): SIDE_SIZE(size){};
+  //destructer
+  virtual ~Board();
+
+  //Public functions
+  bool initialize(); //Initializes Arrays
+  int getSideSize(); //returns SIDE_SIZE;
+  void printBoard(); //prints the board
+  bool addMove(int col, int row, int player); //adds new piece to the board
+
+ private:
+  //Private members
+  const int SIDE_SIZE;
+  int *pieces;
+  char *column[];
+  int *row[];
+
+  //Helper functions
+  void printBorder();
+};
+  
+#endif //Close include guard

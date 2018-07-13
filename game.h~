@@ -1,0 +1,31 @@
+//Include Guards
+#ifndef GAME_H_
+#define GAME_H_
+
+#include <iostream>
+
+using namespace std;
+
+class Game
+{
+  //constructor
+ public:
+  Game();
+  Game(int size);
+  //Public functions
+  void play();
+
+ private:
+  //Data, Private Members
+  Board board;
+  bool isFirstMove;
+  int currPlayer;
+  bool humFirst;
+
+  //Private Helper Functions
+  void print();//Exactly what it says                                                                                                               
+  bool inputMove(String input);//Prepares string for proper input                                                                                   
+  void setAIFirst();
+};
+
+#endif //Close include guards

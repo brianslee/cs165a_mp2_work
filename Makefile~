@@ -1,0 +1,18 @@
+CC = g++ -g
+STDFLAGS = -std=c++11
+
+all: Gobang test gametest
+
+Gobang:
+	$(CC) main.cc -o $@ $(STDFLAGS)
+
+test:
+	$(CC) board.cc test.cc -o $@ $(STDFLAGS)
+
+gametest:
+	$(CC) board.cc game.cc gametest.cc -o $@ $(STDFLAGS)
+
+.PHONY: clean
+
+clean:
+	rm -rf Gobang test
